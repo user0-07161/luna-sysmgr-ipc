@@ -167,7 +167,7 @@ PIpcBuffer::~PIpcBuffer()
 	// pthread_mutex_destroy is deliberately not called to avoid
 	// the issue of ownership. on Linux pthread_mutex_destroy does
 	// nothing apart from checking that the mutex is unlocked
-    if (m_data > 0) {
+    if (m_data != nullptr) {
 
 		if (m_lockCount)
 			unlock();
