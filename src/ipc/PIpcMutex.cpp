@@ -108,7 +108,7 @@ PIpcMutex::~PIpcMutex()
 	// the issue of ownership. on Linux pthread_mutex_destroy does
 	// nothing apart from checking that the mutex is unlocked
 	
-    if (m_data > 0)
+    if (m_data != nullptr)
 		::shmdt(m_data);
 }
 
